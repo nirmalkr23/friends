@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Friends List</h1>
+<table class="table table-striped table-bordered ">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone-No</th>
+    </tr>
+  </thead>
+  <tbody> <!-- Added tbody tag to contain table rows -->
+    <% @friends.each do |friend| %>
+    <tr> <!-- Added table row tag -->
+      <td><%= friend.first_name %></td> <!-- Assuming you have attributes named 'first_name', 'last_name', 'email', 'phone_no' in your Friend model -->
+      <td><%= friend.last_name %></td>
+      <td><%= friend.email %></td>
+      <td><%= friend.phone_number %></td>
+      <td colspan="4"> <!-- Spanning across all four columns -->
+        <%= button_to "Show", friend %>
+      </td>
+      <td colspan="4"> <!-- Spanning across all four columns -->
+        <%= button_to "Edit", edit_friend_path(friend), method: 'get'%>
+      </td>
+      <td colspan="4"> <!-- Spanning across all four columns -->
+        <%= button_to "Destroy", friend_path(friend), method: 'delete' %>
+      </td>
+    </tr>
+   
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New friend", new_friend_path ,class:"btn btn-primary"%>
