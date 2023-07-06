@@ -1,4 +1,6 @@
 class Friend < ApplicationRecord
+
+    has_one :mobile
     validates :first_name, presence: true
     validates :email, presence: true, uniqueness: true
     validates :last_name, presence: true
@@ -8,7 +10,8 @@ class Friend < ApplicationRecord
 
     private
     def CheckNamePresence
-        first_name=Friend.where("first_name =?",first_name)
-        errors.add(:first_name,"Already taken")
+        existing_friend = Friend.where(first_name: first_name).first
+        errors.add(:first_name, "Already taken") if existing_friend
     end
+
 end

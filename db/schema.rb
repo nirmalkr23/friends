@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_04_064510) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_06_055158) do
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.string "body"
@@ -47,6 +47,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_064510) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "mobiles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "friend_id", null: false
+    t.string "model"
+    t.string "processor"
+    t.string "ram"
+    t.string "rom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_mobiles_on_friend_id"
+  end
+
   create_table "user1s", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -54,4 +65,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_064510) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "mobiles", "friends"
 end

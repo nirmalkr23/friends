@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  friend: one
+  model: MyString
+  processor: MyString
+  ram: MyString
+  rom: MyString
+
+two:
+  friend: two
+  model: MyString
+  processor: MyString
+  ram: MyString
+  rom: MyString

@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+mob=Mobile.new(
+    model:  'ONEPLUS 11R',
+    processor: 'SNAP-D-8',
+    rom: '128',
+    ram: '8GB'
+    
+)

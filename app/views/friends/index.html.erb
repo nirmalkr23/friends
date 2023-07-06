@@ -18,13 +18,18 @@
       <td><%= friend.email %></td>
       <td><%= friend.phone_number %></td>
       <td colspan="4"> <!-- Spanning across all four columns -->
-        <%= button_to "Show", friend %>
+        <%= button_to "Show", friend_path(friend), method: :get %>
+
       </td>
       <td colspan="4"> <!-- Spanning across all four columns -->
         <%= button_to "Edit", edit_friend_path(friend), method: 'get'%>
       </td>
       <td colspan="4"> <!-- Spanning across all four columns -->
         <%= button_to "Destroy", friend_path(friend), method: 'delete' %>
+      </td>
+
+      <td colspan="4"> <!-- Spanning across all four columns -->
+        <%= button_to "Mobile", mobile_path(friend), method: 'get' %>
       </td>
     </tr>
    

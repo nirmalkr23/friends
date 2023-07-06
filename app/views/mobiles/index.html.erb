@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Mobiles</h1>
+
+<div id="mobiles">
+  <% @mobiles.each do |mobile| %>
+    <%= render mobile %>
+    <p>
+      <%= link_to "Show this mobile", mobile %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New mobile", new_mobile_path %>
