@@ -15,6 +15,10 @@
   <body>
     <%= render 'shared/header'%>
     <div class="container">
+      <br>
+      <% if notice %>
+        <%= render 'layouts/alert' %>
+      <% end %>
     <%= yield %>
     <br>
     <%= render 'shared/footer'%>

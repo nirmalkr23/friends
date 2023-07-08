@@ -8,15 +8,34 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         
-        <li class="nav-item">
+        
+        <% if user_signed_in? %>
+          <li class="nav-item">
             <%= link_to "Friend", friends_path,class:"nav-link" %>
-          <%# <a class="nav-link" href="#">Link</a> %>
-        </li>
+            <%# <a class="nav-link" href="#">Link</a> %>
+          </li>
 
-        <li class="nav-item">
-            <%= link_to "Add Friend", new_friend_path,class:"nav-link" %>
-          <%# <a class="nav-link" href="#">Link</a> %>
-        </li>
+          <li class="nav-item">
+              <%= link_to "Add Friend", new_friend_path,class:"nav-link" %>
+            <%# <a class="nav-link" href="#">Link</a> %>
+          </li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link", data: { confirm: "Are you sure you want to sign out?" } %>
+
+          <li class="nav-item">
+              <%= link_to "Profile", edit_user_registration_path,class:"nav-link" %>
+            <%# <a class="nav-link" href="#">Link</a> %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+              <%= link_to "Sign-Up", new_user_registration_path,class:"nav-link" %>
+            <%# <a class="nav-link" href="#">Link</a> %>
+          </li>
+          <li class="nav-item">
+              <%= link_to "Sign-In", new_user_session_path,class:"nav-link" %>
+            <%# <a class="nav-link" href="#">Link</a> %>
+          </li>
+        <% end %>
+        
 
          <li class="nav-item">
             <%= link_to "About Us", home_about_path,class:"nav-link" %>
