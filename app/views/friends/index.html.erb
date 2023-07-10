@@ -12,6 +12,7 @@
   </thead>
   <tbody> <!-- Added tbody tag to contain table rows -->
     <% @friends.each do |friend| %>
+      <% if friend.user == current_user%>
     <tr> <!-- Added table row tag -->
       <td><%= friend.first_name %></td> <!-- Assuming you have attributes named 'first_name', 'last_name', 'email', 'phone_no' in your Friend model -->
       <td><%= friend.last_name %></td>
@@ -28,11 +29,8 @@
         <%= button_to "Destroy", friend_path(friend), method: 'delete' %>
       </td>
 
-      <td colspan="4"> <!-- Spanning across all four columns -->
-        <%= button_to "Mobile", mobile_path(friend), method: 'get' %>
-      </td>
     </tr>
-   
+   <% end %>
     <% end %>
   </tbody>
 </table>
