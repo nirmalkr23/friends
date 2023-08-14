@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_10_064933) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_20_061547) do
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.string "body"
@@ -52,19 +52,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_10_064933) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "user_id"<li class="nav-item">
+    <%= button_to "Broadcast", new_email_path, method: :get, class: "btn btn-secondary" %>
+</li>
     t.index ["user_id"], name: "index_friends_on_user_id"
-  end
-
-  create_table "mobiles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "friend_id", null: false
-    t.string "model"
-    t.string "processor"
-    t.string "ram"
-    t.string "rom"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["friend_id"], name: "index_mobiles_on_friend_id"
   end
 
   create_table "user1s", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -82,9 +73,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_10_064933) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "uid"
+    t.string "provider"
+    t.string "otp_secret"
+    t.integer "consumed_timestep"
+    t.boolean "otp_required_for_login"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "mobiles", "friends"
 end

@@ -28,14 +28,13 @@
               <%= link_to "Profile", edit_user_registration_path,class:"nav-link" %>
             <%# <a class="nav-link" href="#">Link</a> %>
           </li>
+
+          <li class="nav-item">
+            <%= button_to "Broadcast", new_email_path, method: :get, class: "btn btn-secondary" %>
+        </li>
         <% else %>
           <li class="nav-item">
-              <%= link_to "Sign-Up", new_user_registration_path,class:"nav-link" %>
-            <%# <a class="nav-link" href="#">Link</a> %>
-          </li>
-          <li class="nav-item">
-              <%= link_to "Sign-In", new_user_session_path,class:"nav-link" %>
-            <%# <a class="nav-link" href="#">Link</a> %>
+            <%= button_to "Sign In", new_user_session_path, method: :post, class: "btn btn-secondary" %>
           </li>
         <% end %>
         
@@ -45,9 +44,7 @@
           <%# <a class="nav-link" href="#">Link</a> %>
         </li>
 
-        <li class="nav-item">
-            <%= button_to "All Email", send_email_path, method: :post, class: "btn btn-secondary" %>
-        </li>
+        
 
         
       </ul>

@@ -16,6 +16,9 @@ gem "mysql2"
 #rails authentication
 gem "devise"
 
+#job proceesing gem
+gem "sidekiq"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -74,3 +77,11 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
+gem "dotenv"
+gem "devise-two-factor"
+gem "rqrcode"
+

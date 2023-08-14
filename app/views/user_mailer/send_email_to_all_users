@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 </head>
 <body>
-  <h1>Welcome <%= @user.email %>!</h1>
-  <p>
-    YOUR PAYMENT OF THIS MONTH IS SUCCESSFULLY TRANSFERED TO YOUR ACCOUNT.
-    ENJOY IT....!!!!
-  </p>
-  
+  <h1>Email Subject: <%= @subject %></h1>
+  <p><%= @body %></p>
 </body>
-</html>
+</html> -->
+Email Subject: <%= @subject %>
+
+<%= @body.html_safe %>
+
+

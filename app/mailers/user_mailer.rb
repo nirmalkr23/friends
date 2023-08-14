@@ -7,8 +7,11 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 
-  def send_email_to_all_users(user)
-    @users = user
-      mail(to: user.email, subject: "Hello from UserMailer!")
+  def send_email_to_all_users(recipients,subject,body)
+    @body=body 
+    mail(to: recipients,subject: subject)do |format|
+      format.text { render plain: body }
+      format.html { render html: body.html_safe }
+    end
   end
 end

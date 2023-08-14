@@ -1,5 +1,6 @@
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container my-5">
+<% if user_signed_in? %>
+  <div class="container my-5">
 
   <!-- Footer -->
   <footer
@@ -144,4 +145,6 @@
   <!-- Footer -->
 
 </div>
+ <% end %>
+
 <!-- End of .container -->
